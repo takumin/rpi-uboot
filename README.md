@@ -42,12 +42,12 @@ Please create a file with the following contents.
 [board-type=0x00]
 kernel=u-boot-bcm2708-rpi-b.bin
 
-# Raspberry Pi 1B 32Bit
-[board-type=0x01]
-kernel=u-boot-bcm2708-rpi-b.bin
-
 # Raspberry Pi 1A+ 32Bit
 [board-type=0x02]
+kernel=u-boot-bcm2708-rpi-b.bin
+
+# Raspberry Pi 1B 32Bit
+[board-type=0x01]
 kernel=u-boot-bcm2708-rpi-b.bin
 
 # Raspberry Pi 1B+ 32Bit
@@ -135,6 +135,7 @@ dtoverlay=vc4-kms-v3d
 
 # All Raspberry Pi
 [all]
+force_turbo=1
 dtparam=watchdog=on
 ```
 
