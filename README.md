@@ -62,58 +62,80 @@ kernel=u-boot-bcm2709-rpi-2-b.bin
 [board-type=0x06]
 kernel=u-boot-bcm2708-rpi-cm.bin
 
-# Raspberry Pi 3B 64Bit
-[board-type=0x08]
-arm_64bit=1
-kernel=u-boot-bcm2710-rpi-3-b.bin
-
 # Raspberry Pi Zero 32Bit
 [board-type=0x09]
 kernel=u-boot-bcm2708-rpi-zero.bin
-
-# Raspberry Pi CM3 64Bit
-[board-type=0x0a]
-arm_64bit=1
-kernel=u-boot-bcm2710-rpi-cm3.bin
 
 # Raspberry Pi Zero W 32Bit
 [board-type=0x0c]
 kernel=u-boot-bcm2708-rpi-zero-w.bin
 
-# Raspberry Pi 3B+ 64Bit
-[board-type=0x0d]
-arm_64bit=1
-kernel=u-boot-bcm2710-rpi-3-b-plus.bin
-
 # Raspberry Pi 3A+ 64Bit
 [board-type=0x0e]
 arm_64bit=1
 kernel=u-boot-bcm2710-rpi-3-b-plus.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
+
+# Raspberry Pi 3B 64Bit
+[board-type=0x08]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-3-b.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
+
+# Raspberry Pi 3B+ 64Bit
+[board-type=0x0d]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-3-b-plus.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
+
+# Raspberry Pi CM3 64Bit
+[board-type=0x0a]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-cm3.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
 
 # Raspberry Pi CM3+ 64Bit
 [board-type=0x10]
 arm_64bit=1
 kernel=u-boot-bcm2710-rpi-cm3.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
 
 # Raspberry Pi 4B 64Bit
 [board-type=0x11]
 arm_64bit=1
 kernel=u-boot-bcm2711-rpi-4-b.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
 
 # Raspberry Pi Zero 2 W 64Bit
 [board-type=0x12]
 arm_64bit=1
 kernel=u-boot-bcm2710-rpi-zero-2-w.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
 
 # Raspberry Pi 400 64Bit
 [board-type=0x13]
 arm_64bit=1
 kernel=u-boot-bcm2711-rpi-400.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
 
 # Raspberry Pi CM4 64Bit
 [board-type=0x14]
 arm_64bit=1
 kernel=u-boot-bcm2711-rpi-cm4.bin
+dtoverlay=miniuart-bt
+dtoverlay=vc4-kms-v3d
+
+# All Raspberry Pi
+[all]
+dtparam=watchdog=on
 ```
 
 ## Final
