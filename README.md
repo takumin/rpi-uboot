@@ -38,21 +38,82 @@ Please download U-Boot binary from release page.
 Please create a file with the following contents.
 
 ```
-# Enable GPIO UART
-#enable_uart=1
+# Raspberry Pi 1A 32Bit
+[board-type=0x00]
+kernel=u-boot-bcm2708-rpi-b.bin
 
-# Raspberry Pi 1 Model A/A+/B/B+
-#kernel=rpi1_uboot.bin
+# Raspberry Pi 1B 32Bit
+[board-type=0x01]
+kernel=u-boot-bcm2708-rpi-b.bin
 
-# Raspberry Pi 2 Model B
-#kernel=rpi2_uboot.bin
+# Raspberry Pi 1A+ 32Bit
+[board-type=0x02]
+kernel=u-boot-bcm2708-rpi-b.bin
 
-# Raspberry Pi 3 Model B (32bit)
-#kernel=rpi3_32_uboot.bin
+# Raspberry Pi 1B+ 32Bit
+[board-type=0x03]
+kernel=u-boot-bcm2708-rpi-b-plus.bin
 
-# Raspberry Pi 3 Model B (64bit)
-#arm_64bit=1
-#kernel=rpi3_64_uboot.bin
+# Raspberry Pi 2B 32Bit
+[board-type=0x04]
+kernel=u-boot-bcm2709-rpi-2-b.bin
+
+# Raspberry Pi CM1 32Bit
+[board-type=0x06]
+kernel=u-boot-bcm2708-rpi-cm.bin
+
+# Raspberry Pi 3B 64Bit
+[board-type=0x08]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-3-b.bin
+
+# Raspberry Pi Zero 32Bit
+[board-type=0x09]
+kernel=u-boot-bcm2708-rpi-zero.bin
+
+# Raspberry Pi CM3 64Bit
+[board-type=0x0a]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-cm3.bin
+
+# Raspberry Pi Zero W 32Bit
+[board-type=0x0c]
+kernel=u-boot-bcm2708-rpi-zero-w.bin
+
+# Raspberry Pi 3B+ 64Bit
+[board-type=0x0d]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-3-b-plus.bin
+
+# Raspberry Pi 3A+ 64Bit
+[board-type=0x0e]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-3-b-plus.bin
+
+# Raspberry Pi CM3+ 64Bit
+[board-type=0x10]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-cm3.bin
+
+# Raspberry Pi 4B 64Bit
+[board-type=0x11]
+arm_64bit=1
+kernel=u-boot-bcm2711-rpi-4-b.bin
+
+# Raspberry Pi Zero 2 W 64Bit
+[board-type=0x12]
+arm_64bit=1
+kernel=u-boot-bcm2710-rpi-zero-2-w.bin
+
+# Raspberry Pi 400 64Bit
+[board-type=0x13]
+arm_64bit=1
+kernel=u-boot-bcm2711-rpi-400.bin
+
+# Raspberry Pi CM4 64Bit
+[board-type=0x14]
+arm_64bit=1
+kernel=u-boot-bcm2711-rpi-cm4.bin
 ```
 
 ## Final
