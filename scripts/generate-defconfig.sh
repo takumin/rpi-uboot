@@ -49,9 +49,9 @@ for defconfig in "${CONFIG_DIR}"/*; do
   fi
 
   if grep -Eqs "CONFIG_BOOTDELAY=.*" "${defconfig}"; then
-    sed -i -E 's/CONFIG_BOOTDELAY=.*/CONFIG_BOOTDELAY=0/' "${defconfig}"
+    sed -i -E 's/CONFIG_BOOTDELAY=.*/CONFIG_BOOTDELAY=-2/' "${defconfig}"
   else
-    echo 'CONFIG_BOOTDELAY=0' >> "${defconfig}"
+    echo 'CONFIG_BOOTDELAY=-2' >> "${defconfig}"
   fi
 
   if grep -Eqs "CONFIG_CMD_BOOTEFI=.*" "${defconfig}"; then
