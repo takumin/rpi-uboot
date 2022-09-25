@@ -121,6 +121,15 @@ define DEFCONFIG
 	@rm "$(SOURCE_DIR)/configs/$(@F)"
 endef
 
+define MENUCONFIG
+	@$(MAKE) \
+		-C "$(SOURCE_DIR)" \
+		-j "$(PARALLEL)" \
+		O="$2" \
+		CROSS_COMPILE="$1" \
+		menuconfig
+endef
+
 define BUILD
 	@$(MAKE) \
 		-C "$(SOURCE_DIR)" \
@@ -223,6 +232,59 @@ $(BCM2711_RPI_400_DIR)/.config: $(BCM2711_RPI_400_DIR)
 	$(call DEFCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2711_RPI_400_DEFCONFIG))
 $(BCM2711_RPI_CM4_DIR)/.config: $(BCM2711_RPI_CM4_DIR)
 	$(call DEFCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2711_RPI_CM4_DEFCONFIG))
+
+################################################################################
+# Menu Config Targets
+################################################################################
+
+.PHONY: menuconfig-bcm2708-rpi-b-plus
+menuconfig-bcm2708-rpi-b-plus: $(BCM2708_RPI_B_PLUS_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_B_PLUS_DIR))
+.PHONY: menuconfig-bcm2708-rpi-b-rev1
+menuconfig-bcm2708-rpi-b-rev1: $(BCM2708_RPI_B_REV1_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_B_REV1_DIR))
+.PHONY: menuconfig-bcm2708-rpi-b
+menuconfig-bcm2708-rpi-b: $(BCM2708_RPI_B_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_B_DIR))
+.PHONY: menuconfig-bcm2708-rpi-cm
+menuconfig-bcm2708-rpi-cm: $(BCM2708_RPI_CM_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_CM_DIR))
+.PHONY: menuconfig-bcm2708-rpi-zero-w
+menuconfig-bcm2708-rpi-zero-w: $(BCM2708_RPI_ZERO_W_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_ZERO_W_DIR))
+.PHONY: menuconfig-bcm2708-rpi-zero
+menuconfig-bcm2708-rpi-zero: $(BCM2708_RPI_ZERO_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2708_RPI_ZERO_DIR))
+.PHONY: menuconfig-bcm2709-rpi-2-b
+menuconfig-bcm2709-rpi-2-b: $(BCM2709_RPI_2_B_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2709_RPI_2_B_DIR))
+.PHONY: menuconfig-bcm2710-rpi-2-b
+menuconfig-bcm2710-rpi-2-b: $(BCM2710_RPI_2_B_DIR)/.config
+	$(call MENUCONFIG,$(ARM32_CROSS_COMPILE),$(BCM2710_RPI_2_B_DIR))
+.PHONY: menuconfig-bcm2710-rpi-3-b-plus
+menuconfig-bcm2710-rpi-3-b-plus: $(BCM2710_RPI_3_B_PLUS_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2710_RPI_3_B_PLUS_DIR))
+.PHONY: menuconfig-bcm2710-rpi-3-b
+menuconfig-bcm2710-rpi-3-b: $(BCM2710_RPI_3_B_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2710_RPI_3_B_DIR))
+.PHONY: menuconfig-bcm2710-rpi-cm3
+menuconfig-bcm2710-rpi-cm3: $(BCM2710_RPI_CM3_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2710_RPI_CM3_DIR))
+.PHONY: menuconfig-bcm2710-rpi-zero-2-w
+menuconfig-bcm2710-rpi-zero-2-w: $(BCM2710_RPI_ZERO_2_W_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2710_RPI_ZERO_2_W_DIR))
+.PHONY: menuconfig-bcm2710-rpi-zero-2
+menuconfig-bcm2710-rpi-zero-2: $(BCM2710_RPI_ZERO_2_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2710_RPI_ZERO_2_DIR))
+.PHONY: menuconfig-bcm2711-rpi-4-b
+menuconfig-bcm2711-rpi-4-b: $(BCM2711_RPI_4_B_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2711_RPI_4_B_DIR))
+.PHONY: menuconfig-bcm2711-rpi-400
+menuconfig-bcm2711-rpi-400: $(BCM2711_RPI_400_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2711_RPI_400_DIR))
+.PHONY: menuconfig-bcm2711-rpi-cm4
+menuconfig-bcm2711-rpi-cm4: $(BCM2711_RPI_CM4_DIR)/.config
+	$(call MENUCONFIG,$(ARM64_CROSS_COMPILE),$(BCM2711_RPI_CM4_DIR))
 
 ################################################################################
 # Build Binary Targets
