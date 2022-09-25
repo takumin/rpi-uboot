@@ -110,15 +110,14 @@ BCM2711_RPI_CM4_DEFCONFIG      := $(abspath $(CONFIG_DIR)/bcm2711_rpi_cm4_defcon
 ################################################################################
 
 define DEFCONFIG
-	@cp "$2" "$(@D)/.config"
-	@cp "$2" "$(SOURCE_DIR)/configs/$(@F)"
+	@cp "$2" "$(SOURCE_DIR)/configs/$(shell basename "$2")"
 	@$(MAKE) \
 		-C "$(SOURCE_DIR)" \
 		-j "$(PARALLEL)" \
 		O="$(@D)" \
 		CROSS_COMPILE="$1" \
-		olddefconfig
-	@rm "$(SOURCE_DIR)/configs/$(@F)"
+		"$(shell basename "$2")"
+	@rm "$(SOURCE_DIR)/configs/$(shell basename "$2")"
 endef
 
 define MENUCONFIG
