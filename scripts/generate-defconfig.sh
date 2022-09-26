@@ -95,12 +95,6 @@ for defconfig in "${CONFIG_DIR}"/*; do
     echo 'CONFIG_BOOTP_SEND_HOSTNAME=y' >> "${defconfig}"
   fi
 
-  if grep -Eqs "CONFIG_BOOTP_PREFER_SERVERIP=.*" "${defconfig}"; then
-    sed -i -E 's/CONFIG_BOOTP_PREFER_SERVERIP=.*/CONFIG_BOOTP_PREFER_SERVERIP=y/' "${defconfig}"
-  else
-    echo 'CONFIG_BOOTP_PREFER_SERVERIP=y' >> "${defconfig}"
-  fi
-
   if grep -Eqs "CONFIG_BOOTP_DNS2=.*" "${defconfig}"; then
     sed -i -E 's/CONFIG_BOOTP_DNS2=.*/CONFIG_BOOTP_DNS2=y/' "${defconfig}"
   else
